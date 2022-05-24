@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const products = await Product.find().select(["name", "amount"]);
+    const products = await Product.find().select(["name", "amount", "value"]);
     res.status(201).json({
       status: "success",
       products,
